@@ -1,0 +1,11 @@
+<adapter-config name="ConsultarLivrosDB" adapter="db" wsdlLocation="ConsultarLivrosDB.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory UIConnectionName="MySQLConn" location="eis/DB/MySQLConn"/>
+  <endpoint-interaction portType="ConsultarLivrosDB_ptt" operation="ConsultarLivrosDB">
+    <interaction-spec className="oracle.tip.adapter.db.DBPureSQLInteractionSpec">
+      <property name="SqlString" value="SELECT * FROM Livro WHERE Nome LIKE #Nome"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>

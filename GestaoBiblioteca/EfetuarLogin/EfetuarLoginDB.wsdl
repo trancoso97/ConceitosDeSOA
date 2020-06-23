@@ -1,0 +1,33 @@
+<wsdl:definitions
+     name="ConsultarLivrosDB"
+     targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/SOADevelopment/GestaoBiblioteca/ConsultarLivrosDB"
+     xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/SOADevelopment/GestaoBiblioteca/ConsultarLivrosDB"
+     xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/"
+     xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
+     xmlns:db="http://xmlns.oracle.com/pcbpel/adapter/db/ConsultarLivrosDB"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    >
+  <plt:partnerLinkType name="ConsultarLivrosDB_plt" >
+    <plt:role name="ConsultarLivrosDB_role" >
+      <plt:portType name="tns:ConsultarLivrosDB_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" >
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/ConsultarLivrosDB"
+                schemaLocation="../ConsultarLivros/ConsultarLivrosDB.xsd" />
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="ConsultarLivrosDBInput_msg">
+        <wsdl:part name="ConsultarLivrosDBInput_msg" element="db:ConsultarLivrosDBInput"/>
+    </wsdl:message>
+    <wsdl:message name="ConsultarLivrosDBOutputCollection_msg">
+        <wsdl:part name="ConsultarLivrosDBOutputCollection" element="db:ConsultarLivrosDBOutputCollection"/>
+    </wsdl:message>
+    <wsdl:portType name="ConsultarLivrosDB_ptt">
+        <wsdl:operation name="ConsultarLivrosDB">
+            <wsdl:input message="tns:ConsultarLivrosDBInput_msg"/>
+            <wsdl:output message="tns:ConsultarLivrosDBOutputCollection_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

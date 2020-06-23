@@ -1,0 +1,22 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/ConsultarLivrosDB" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/ConsultarLivrosDB" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="ConsultarLivrosDBInput" type="ConsultarLivrosDBInput"/>
+   <xs:complexType name="ConsultarLivrosDBInput">
+      <xs:sequence>
+         <xs:element name="Nome" type="xs:string" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="ConsultarLivrosDBOutputCollection" type="ConsultarLivrosDBOutputCollection"/>
+   <xs:complexType name="ConsultarLivrosDBOutputCollection">
+      <xs:sequence>
+         <xs:element name="ConsultarLivrosDBOutput" type="ConsultarLivrosDBOutput" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ConsultarLivrosDBOutput">
+      <xs:sequence>
+         <xs:element name="idLivro" type="xs:int" nillable="true"/>
+         <xs:element name="Nome" type="xs:string" nillable="true"/>
+         <xs:element name="Quant" type="xs:int" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>
